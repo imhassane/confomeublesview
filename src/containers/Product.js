@@ -19,10 +19,7 @@ export default class Product extends React.Component {
         const products = this.state.products
         return (
             <div>
-                <h1>Liste des produits</h1>
-                <p>
-                    Terme de recherche: {this.props.search}
-                </p>
+                <h4>Nos derniers produits</h4>
                 <ProductList products={products} search={this.props.search} />
             </div>
         )

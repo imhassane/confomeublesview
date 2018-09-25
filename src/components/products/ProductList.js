@@ -8,16 +8,18 @@ const ProductList = ({ products, search }) => {
 
         if(product.name.toLowerCase().includes(search.toLowerCase())){
             return (
-                <ProductDescription
-                    id={product.id}
-                    slug={product.slug}
-                    key={product.id}
-                    name={product.name}
-                    description={product.description}
-                    details={product.details}
-                    image={product.image}
-                    category={product.category}
-                />
+                <div key={product.id}>
+                    <ProductDescription
+                        id={product.id}
+                        slug={product.slug}
+                        key={product.id}
+                        name={product.name}
+                        description={product.description}
+                        details={product.details}
+                        image={product.image}
+                        category={product.category}
+                    />
+                </div>
             )
         }
                 
@@ -25,7 +27,7 @@ const ProductList = ({ products, search }) => {
     })
     
     return (
-        <div>
+        <div className="uk-grid-small uk-child-width-1-3 uk-grid-match" uk-grid="true">
             {products_list}
         </div>
     )

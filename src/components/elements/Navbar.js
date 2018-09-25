@@ -15,15 +15,15 @@ export default class Navbar extends React.Component {
 
     render(){
         return (
-            <div className="">
-                <div>
+            <div className="row">
+                <div className="col-md-4">
                     <h3>Confo Meubles</h3>
                     <small>La qualité à bon prix</small>
                 </div>
-                <div>
+                <div className="col-md-4">
                     <input type="text" onChange={e=>this.handleSubmit(e)} />
                 </div>
-                <div>
+                <div className="col-md-4">
 
                 </div>
             </div>

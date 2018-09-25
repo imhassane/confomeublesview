@@ -1,12 +1,22 @@
 import React from 'react'
 import { Link } from "react-router-dom"
+import { getProduct } from "../../functions"
+
 
 const ProductDescription = ({id, name, slug, description, details, image, category}) => (
-    <div className="">
+    <Link to={getProduct(id, slug)}>
+        <div className="uk-card uk-card-default">
 
-        <h3>{name}</h3>
-        <Link to={`/product/${id}/${slug}/`}>Voir les details</Link>
-    </div>
+            <div className="uk-card-media-top">
+                <img src={image} alt={name} />
+            </div>
+
+            <div className="uk-card-body">
+                <span className="">{name}</span>
+            </div>
+            
+        </div>
+    </Link>
 )
 
 export default ProductDescription
