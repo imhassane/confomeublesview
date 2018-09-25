@@ -6,6 +6,7 @@ import { makeURL} from "../functions"
 export default class Product extends React.Component {
     constructor(props){
         super(props)
+        this.props = props
         this.state = {
             products: []
         }
@@ -19,7 +20,10 @@ export default class Product extends React.Component {
         return (
             <div>
                 <h1>Liste des produits</h1>
-                <ProductList products={products} />
+                <p>
+                    Terme de recherche: {this.props.search}
+                </p>
+                <ProductList products={products} search={this.props.search} />
             </div>
         )
     }

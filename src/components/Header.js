@@ -9,7 +9,7 @@ const Header = props => {
 
             <TopNavbar />
 
-            <Navbar />
+            <Navbar changeSearch={props.changeSearch} />
 
         </header>
     )

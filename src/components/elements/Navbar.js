@@ -1,21 +1,32 @@
 import React from "react"
 
 
-const Navbar = props => {
-    return (
-        <div className="">
-            <div>
-                <h3>Confo Meubles</h3>
-                <small>La qualité à bon prix</small>
-            </div>
-            <div>
+export default class Navbar extends React.Component {
 
-            </div>
-            <div>
+    constructor(props){
+        super(props)
+        this.props = props
+    }
 
+    handleSubmit = e => {
+        const search = e.target.value
+        this.props.changeSearch(search)
+    }
+
+    render(){
+        return (
+            <div className="">
+                <div>
+                    <h3>Confo Meubles</h3>
+                    <small>La qualité à bon prix</small>
+                </div>
+                <div>
+                    <input type="text" onChange={e=>this.handleSubmit(e)} />
+                </div>
+                <div>
+
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
-
-export default Navbar
