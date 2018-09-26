@@ -27,8 +27,8 @@ export default class Navbar extends React.Component {
                         </Link>
                     </div>
                     <div className="col-md-5 row">
-                        <input type="search" className="col-6 uk-input uk-border-pill border-dark" onChange={e=>this.handleSubmit(e)} />
-                        <Link to="/" className="col-5 uk-button uk-padding-remove">
+                        <input type="search" className="col-md-6 col-sm-5 col-xs-3 uk-input uk-border-pill border-dark" onChange={e=>this.handleSubmit(e)} />
+                        <Link to="/" className="col-md-3 col-sm-3 col-xs-3 uk-button uk-padding-remove">
                             <span uk-icon="icon:search"></span>
                         </Link>
                     </div>

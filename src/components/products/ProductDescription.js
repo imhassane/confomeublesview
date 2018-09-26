@@ -4,23 +4,27 @@ import { getProduct } from "../../functions"
 
 
 const ProductDescription = ({id, name, slug, description, details, image, category, price}) => (
-    <Link to={getProduct(id, slug)}>
-        <div className="uk-card uk-card-default">
+    
+    <div className="uk-card uk-card-muted">
 
-            <div className="uk-card-media-top">
-                <img src={image} alt={name} style={{minHeight: '100px'}} />
-            </div>
-
-            <div className="uk-card-body">
-                <span className="uk-text-bold">{name}</span>
-            </div>
-
-            <div className="uk-card-footer">
-                <span className="uk-text-lead uk-text-primary">{price}€</span>
-            </div>
-            
+        <div className="uk-card-media-top uk-cover-container">
+            <canvas width="50" height="150"></canvas>
+            <img src={image} alt={name} uk-cover="true"/>
         </div>
-    </Link>
+
+        <div className="uk-card-body uk-flex uk-flex-between">
+            <span className="uk-text-bold">{name}</span>
+            <Link to={getProduct(id, slug)} className="uk-text-bold">Voir</Link>
+        </div>
+
+        <div className="uk-card-footer uk-flex uk-flex-between">
+            <span className="uk-text-lead uk-text-bold">{price}€</span>
+            <Link to="/" className="uk-button uk-button-small">
+                    Ajouter aux favoris
+            </Link>
+        </div>
+            
+    </div>
 )
 
 export default ProductDescription

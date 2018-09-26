@@ -6,8 +6,9 @@ import { getCategory } from "../../functions"
 const CategoryDescription = ({id, name, slug, description, image, details}) => (
     <Link to={getCategory(id, slug)}>
         <div className="uk-card uk-card-default uk-card-hover">
-            <div className="uk-card-media-top">
-                <img src={image} alt={name} style={{minHeight: "100px"}}/>
+            <div className="uk-card-media-top uk-cover-container">
+                <canvas width="50" height="150"></canvas>
+                <img src={image} alt={name} uk-cover="true"/>
             </div>
             <div className="uk-card-body">
                 <span className="uk-text-bold">{name}</span>

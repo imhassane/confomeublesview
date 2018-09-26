@@ -4,7 +4,10 @@ import { getProducts } from "../../functions"
 import ProductDescription from "./ProductDescription"
 
 
-const ProductList = ({ products, search }) => {
+const ProductList = props => {
+    const { products, search, home } = props
+    console.log("home " + home)
+
     const products_list = products.map((key, i) => {
         const product = products[i]
 
@@ -31,18 +34,22 @@ const ProductList = ({ products, search }) => {
     
     return (
         <div>
-            <ul className="uk-breadcrumb">
-                <li>
-                    <Link to="/">
-                            Accueil
-                    </Link>
-                </li>
-                <li>
-                    <Link to={getProducts()}>
-                            Produits
-                    </Link>
-                </li>
-            </ul>
+            {!home && (
+                <ul className="uk-breadcrumb">
+                    <li>
+                        <Link to="/">
+                                Accueil
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={getProducts()}>
+                                Produits
+                        </Link>
+                    </li>
+                </ul>
+            )}
+            
+            <p className="uk-text-bold">Nos derniers produits</p>
             <div className="uk-grid-divider uk-child-width-1-3 uk-grid-match" uk-grid="true">
                 {products_list}
             </div>
