@@ -1,6 +1,7 @@
 import React from "react"   
 import TopNavbar from "./elements/TopNavbar"
 import Navbar from "./elements/Navbar"
+import CategoryNavbar from "../containers/CategoryNavbar"
 
 
 const Header = props => {
@@ -10,6 +11,8 @@ const Header = props => {
             <TopNavbar />
 
             <Navbar changeSearch={props.changeSearch} />
+
+            <CategoryNavbar />
 
         </header>
     )

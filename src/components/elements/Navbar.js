@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 
 export default class Navbar extends React.Component {
@@ -17,11 +18,15 @@ export default class Navbar extends React.Component {
         return (
             <div className="row">
                 <div className="col-md-4">
-                    <h3>Confo Meubles</h3>
-                    <small>La qualité à bon prix</small>
+                    <Link to="/">
+                        <div>
+                            <h3>Confo Meubles</h3>
+                            <small>La qualité à bon prix</small>
+                        </div>
+                    </Link>
                 </div>
                 <div className="col-md-4">
-                    <input type="text" onChange={e=>this.handleSubmit(e)} />
+                    <input type="search" className="uk-input uk-border-pill border-dark" onChange={e=>this.handleSubmit(e)} />
                 </div>
                 <div className="col-md-4">
 

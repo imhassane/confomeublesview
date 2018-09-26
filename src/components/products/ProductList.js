@@ -18,6 +18,7 @@ const ProductList = ({ products, search }) => {
                         details={product.details}
                         image={product.image}
                         category={product.category}
+                        price={product.price}
                     />
                 </div>
             )
@@ -27,7 +28,7 @@ const ProductList = ({ products, search }) => {
     })
     
     return (
-        <div className="uk-grid-small uk-child-width-1-3 uk-grid-match" uk-grid="true">
+        <div className="uk-grid-divider uk-child-width-1-3 uk-grid-match" uk-grid="true">
             {products_list}
         </div>
     )

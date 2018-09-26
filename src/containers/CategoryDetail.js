@@ -1,0 +1,50 @@
+import React from 'react'
+import axios from "axios"
+import { Link } from "react-router-dom"
+import { makeURL, getCategories, getCategory } from "../functions"
+
+export default class categoryDetail extends React.Component {
+    constructor(props){
+        super(props)
+        
+        this.state = {
+            category: {}
+        }
+    }
+
+    componentDidMount = () => {
+        axios.get(makeURL(`category/${this.props.id}/${this.props.slug}/`))
+        .then(datas => this.setState({ category: datas.data.category }))
+    }
+
+    render(){
+        const category = this.state.category
+
+        return (
+            <div>
+                <ul className="uk-breadcrumb">
+                    <li>
+                        <Link to="/">
+                            Accueil
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={getCategories()}>
+                            Catégories
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to={getCategory(category.id, category.slug)}>
+                            {category.name}
+                        </Link>
+                    </li>
+                </ul>
+                <div className="">
+
+                    <span className="uk-text-bold">Catégorie: {category.name}</span>
+                    
+                </div>
+            </div>
+        )
+    }
+}
