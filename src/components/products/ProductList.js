@@ -1,4 +1,6 @@
 import React from "react"
+import { Link } from "react-router-dom"
+import { getProducts } from "../../functions"
 import ProductDescription from "./ProductDescription"
 
 
@@ -28,8 +30,22 @@ const ProductList = ({ products, search }) => {
     })
     
     return (
-        <div className="uk-grid-divider uk-child-width-1-3 uk-grid-match" uk-grid="true">
-            {products_list}
+        <div>
+            <ul className="uk-breadcrumb">
+                <li>
+                    <Link to="/">
+                            Accueil
+                    </Link>
+                </li>
+                <li>
+                    <Link to={getProducts()}>
+                            Produits
+                    </Link>
+                </li>
+            </ul>
+            <div className="uk-grid-divider uk-child-width-1-3 uk-grid-match" uk-grid="true">
+                {products_list}
+            </div>
         </div>
     )
 }

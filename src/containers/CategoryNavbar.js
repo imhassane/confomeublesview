@@ -1,5 +1,6 @@
 import React from "react"
 import axios from "axios"
+import { Link } from "react-router-dom"
 import { makeURL, getCategory } from "../functions"
 
 
@@ -19,17 +20,21 @@ export default class CategoryNavbar extends React.Component {
             const category = this.state.categories[i]
             return (
                 <li className="nav-item" key={category.id}>
-                    <a className="nav-link uk-text-meta uk-text-bold" href={getCategory(category.id, category.slug)}>
+                    <Link
+                        className="nav-link uk-text-meta uk-text-bold"
+                        to={getCategory(category.id, category.slug)}
+                    >
                         {category.name}
-                    </a>
+                    </Link>
                 </li>
             )
         })
         return (
             <nav>
-                <ul className="nav">
+                <ul className="nav" uk-slider="true">
                     {lists}
                 </ul>
+                <hr />
             </nav>
         )
     }

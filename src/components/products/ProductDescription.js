@@ -5,7 +5,7 @@ import { getProduct } from "../../functions"
 
 const ProductDescription = ({id, name, slug, description, details, image, category, price}) => (
     <Link to={getProduct(id, slug)}>
-        <div className="uk-card uk-card-default uk-card-hover">
+        <div className="uk-card uk-card-default">
 
             <div className="uk-card-media-top">
                 <img src={image} alt={name} style={{minHeight: '100px'}} />

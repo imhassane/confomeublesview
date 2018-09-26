@@ -12,9 +12,17 @@ export default class categoryDetail extends React.Component {
         }
     }
 
-    componentDidMount = () => {
-        axios.get(makeURL(`category/${this.props.id}/${this.props.slug}/`))
+    getDatas = (id, slug) => {
+        axios.get(makeURL(`category/${id}/${slug}/`))
         .then(datas => this.setState({ category: datas.data.category }))
+    }
+
+    componentDidMount = () => {
+        this.getDatas(this.props.id, this.props.slug)
+    }
+
+    componentWillReceiveProps = nextProps => {
+        this.getDatas(nextProps.id, nextProps.slug)
     }
 
     render(){
