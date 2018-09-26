@@ -19,7 +19,7 @@ export default class Navbar extends React.Component {
             <div>
                 <div className="row">
                     <div className="col-md-3">
-                        <Link to="/">
+                        <Link to="/" id="confo-title">
                             <div>
                                 <h3 className="uk-padding-remove-bottom uk-margin-remove-bottom">Confo Meubles</h3>
                                 <small>La qualité à bon prix</small>

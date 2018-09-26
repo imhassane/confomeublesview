@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import { Helmet } from 'react-helmet'
+ 
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 
@@ -36,12 +37,20 @@ class App extends Component {
 
             <Route path="/" exact render={() => (
               <div>
+                <Helmet>
+                  <title>Confo Meuble | Des meubles adaptés à vos maisons</title>
+                </Helmet>
                 <Home search={this.state.search} />
               </div>
             )} />
           
             <Route path="/products" exact render={() => (
-              <Product search={this.state.search} />
+              <div>
+                  <Helmet>
+                    <title>Nos produits</title>
+                  </Helmet>
+                  <Product search={this.state.search} />
+              </div>
             )} />
 
             <Route path="/product/:id/:slug/" exact render={({match}) => (
@@ -49,7 +58,12 @@ class App extends Component {
             )} />
 
             <Route path="/categories/" exact render={() => (
-              <Category search={this.state.search} />
+              <div>
+                  <Helmet>
+                    <title>Nos produits</title>
+                  </Helmet>
+                  <Category search={this.state.search} />
+              </div>
             )} />
 
             <Route path="/category/:id/:slug" exact render={({match}) => (
