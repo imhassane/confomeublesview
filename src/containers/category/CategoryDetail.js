@@ -1,20 +1,22 @@
 import React from 'react'
 import axios from "axios"
 import { Link } from "react-router-dom"
-import { makeURL, getCategories, getCategory } from "../functions"
+import { makeURL, getCategories, getCategory } from "../../functions"
+import ProductList from "../../components/products/ProductList"
 
 export default class categoryDetail extends React.Component {
     constructor(props){
         super(props)
         
         this.state = {
-            category: {}
+            category: {},
+            loading: true
         }
     }
 
     getDatas = (id, slug) => {
         axios.get(makeURL(`category/${id}/${slug}/`))
-        .then(datas => this.setState({ category: datas.data.category }))
+        .then(datas => this.setState({ category: datas.data.category, loading: false }))
     }
 
     componentDidMount = () => {
@@ -26,7 +28,9 @@ export default class categoryDetail extends React.Component {
     }
 
     render(){
-        const category = this.state.category
+        const { category, loading } = this.state
+
+        if(loading) return <p>Chargement</p>
 
         return (
             <div>
@@ -49,7 +53,9 @@ export default class categoryDetail extends React.Component {
                 </ul>
                 <div className="">
 
-                    <span className="uk-text-bold">Catégorie: {category.name}</span>
+                    <p className="uk-text-bold">Catégorie: {category.name}</p>
+
+                    <ProductList products={category.products} search={""} home={true} />
                     
                 </div>
             </div>

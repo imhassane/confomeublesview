@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import CategoryDescription from "./CategoryDescription"
 
 const CategoryList = ({ categories, search }) => {
@@ -29,8 +30,8 @@ const CategoryList = ({ categories, search }) => {
                 <ul className="uk-grid uk-grid-match uk-slider-items uk-child-width-1-3@s uk-child-width-1-4@">
                     {categories_list}
                 </ul>
-                <a className="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous="true" uk-slider-item="previous"></a>
-                <a className="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next="true" uk-slider-item="next"></a>
+                <Link className="uk-position-center-left uk-position-small uk-hidden-hover" to="#" uk-slidenav-previous="true" uk-slider-item="previous"></Link>
+                <Link className="uk-position-center-right uk-position-small uk-hidden-hover" to="#" uk-slidenav-next="true" uk-slider-item="next"></Link>
             </div>
         </div>
     )

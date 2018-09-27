@@ -6,7 +6,6 @@ import ProductDescription from "./ProductDescription"
 
 const ProductList = props => {
     const { products, search, home } = props
-    console.log("home " + home)
 
     const products_list = products.map((key, i) => {
         const product = products[i]

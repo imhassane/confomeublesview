@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from "axios"
-import ProductList from "../components/products/ProductList"
-import { makeURL} from "../functions"
+import ProductList from "../../components/products/ProductList"
+import { makeURL} from "../../functions"
 
 export default class Product extends React.Component {
     constructor(props){

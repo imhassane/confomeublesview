@@ -1,7 +1,7 @@
 import React from "react"
 import axios from "axios"
 import { Link } from "react-router-dom"
-import { makeURL, getCategory } from "../functions"
+import { makeURL, getCategory } from "../../functions"
 
 
 export default class CategoryNavbar extends React.Component {

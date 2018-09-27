@@ -1,7 +1,7 @@
 import React from "react"
 import axios from "axios"
-import { makeURL } from "../functions"
-import CategoryList from "../components/categories/CategoryList"
+import { makeURL } from "../../functions"
+import CategoryList from "../../components/categories/CategoryList"
 
 
 export default class Category extends React.Component {

@@ -6,11 +6,11 @@ import Footer from "./components/Footer"
 
 import Home from "./containers/Home"
 
-import Product from "./containers/Product"
-import ProductDetail from "./containers/ProductDetail"
+import Product from "./containers/product/Product"
+import ProductDetail from "./containers/product/ProductDetail"
 
-import Category from "./containers/Category"
-import CategoryDetail from "./containers/CategoryDetail"
+import Category from "./containers/category/Category"
+import CategoryDetail from "./containers/category/CategoryDetail"
 
 import { BrowserRouter as Router, Route } from "react-router-dom"
 

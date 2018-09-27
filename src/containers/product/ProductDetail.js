@@ -1,7 +1,8 @@
 import React from 'react'
 import axios from "axios"
 import { Link } from "react-router-dom"
-import { makeURL, getProducts, getProduct } from "../functions"
+import Comment from "../comment/Comment"
+import { makeURL, getProducts, getProduct } from "../../functions"
 
 export default class ProductDetail extends React.Component {
     constructor(props){
@@ -17,7 +18,7 @@ export default class ProductDetail extends React.Component {
         .then(datas => this.setState({ product: datas.data.product }))
     }
     render(){
-        const product = this.state.product
+        const { product } = this.state
 
         return (
             <div>
@@ -63,6 +64,9 @@ export default class ProductDetail extends React.Component {
                         </div>
                     </div>
                     
+                </div>
+                <div>
+                    <Comment product_id={product.id} />
                 </div>
             </div>
         )
