@@ -35,7 +35,7 @@ export default class CommentForm extends React.Component {
                 <form method="POST" action="#" onSubmit={e => this.postComment(e)}>
                     <DjangoCSRFToken/>
                     <fieldset className="uk-fieldset">
-                        <legend className="uk-text-bold">Votre avis sur le produit nous intéresse</legend>
+                        <p className="uk-text-bold">Votre avis sur le produit nous intéresse</p>
                         <div className="uk-margin uk-child-width-1-2" uk-grid="true">
                             <div>
                                 <div>

@@ -2,10 +2,19 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { getProducts } from "../../functions"
 import ProductDescription from "./ProductDescription"
-
+import "../../App.css"
+import { Spinner } from "react-uikit3";
 
 const ProductList = props => {
     const { products, search, home } = props
+
+    if(!products){
+        return (
+            <div className="uk-flex uk-flex-center">
+                <Spinner />
+            </div>
+        )
+    }
 
     const products_list = products.map((key, i) => {
         const product = products[i]
@@ -23,6 +32,7 @@ const ProductList = props => {
                         image={product.image}
                         category={product.category}
                         price={product.price}
+                        favorite={props.favorite}
                     />
                 </div>
             )
@@ -48,8 +58,8 @@ const ProductList = props => {
                 </ul>
             )}
             
-            <p className="uk-text-bold">Nos derniers produits</p>
-            <div className="uk-grid-divider uk-child-width-1-3 uk-grid-match" uk-grid="true">
+            <p className="uk-text-bold">Nos produits</p>
+            <div className="uk-grid-small uk-child-width-1-4@m uk-child-width-1-3@s uk-grid-match" uk-grid="true">
                 {products_list}
             </div>
         </div>

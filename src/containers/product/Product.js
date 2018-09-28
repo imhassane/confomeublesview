@@ -6,7 +6,6 @@ import { makeURL} from "../../functions"
 export default class Product extends React.Component {
     constructor(props){
         super(props)
-        this.props = props
         this.state = {
             products: []
         }

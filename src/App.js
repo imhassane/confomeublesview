@@ -12,7 +12,11 @@ import ProductDetail from "./containers/product/ProductDetail"
 import Category from "./containers/category/Category"
 import CategoryDetail from "./containers/category/CategoryDetail"
 
+import Favorite from "./containers/favorites/Favoite"
+
 import { BrowserRouter as Router, Route } from "react-router-dom"
+
+import "./App.css"
 
 class App extends Component {
   constructor(props){
@@ -68,6 +72,15 @@ class App extends Component {
 
             <Route path="/category/:id/:slug" exact render={({match}) => (
               <CategoryDetail id={match.params.id} slug={match.params.slug} />
+            )} />
+
+            <Route path="/favorites/" exact render={({match}) => (
+              <div>
+                <Helmet>
+                  <title>Vos favoris</title>
+                </Helmet>
+                <Favorite search={this.state.search} />
+              </div>
             )} />
 
           </main>

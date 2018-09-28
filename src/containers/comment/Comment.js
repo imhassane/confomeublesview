@@ -1,5 +1,6 @@
 import React from "react"
 import CommentForm from "./CommentForm"
+import CommentList from "../../components/comments/CommentList"
 
 export default class Comment extends React.Component {
     constructor(props){
@@ -9,13 +10,12 @@ export default class Comment extends React.Component {
             message: ""
         }
     }
-    postComment = () => {
-
-    }
     render(){
+        const { product_id, comments } = this.props
         return (
-            <div>
-                <CommentForm product_id={this.props.product_id} />
+            <div className="uk-margin">
+                <CommentForm product_id={product_id} />
+                <CommentList comments={comments} />
             </div>
         )
     }

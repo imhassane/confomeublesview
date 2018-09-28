@@ -1,8 +1,10 @@
 import React from 'react'
+import Helmet from "react-helmet"
 import axios from "axios"
 import { Link } from "react-router-dom"
 import Comment from "../comment/Comment"
 import { makeURL, getProducts, getProduct } from "../../functions"
+
 
 export default class ProductDetail extends React.Component {
     constructor(props){
@@ -19,9 +21,11 @@ export default class ProductDetail extends React.Component {
     }
     render(){
         const { product } = this.state
-
         return (
             <div>
+                <Helmet>
+                    <title>{product.name}</title>
+                </Helmet>
                 <ul className="uk-breadcrumb">
                     <li>
                         <Link to="/">
@@ -66,7 +70,9 @@ export default class ProductDetail extends React.Component {
                     
                 </div>
                 <div>
-                    <Comment product_id={product.id} />
+                    { product.comments && (
+                        <Comment product_id={product.id} comments={product.comments} />
+                    ) }
                 </div>
             </div>
         )

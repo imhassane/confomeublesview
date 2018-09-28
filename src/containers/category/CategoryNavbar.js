@@ -21,7 +21,7 @@ export default class CategoryNavbar extends React.Component {
             return (
                 <li className="nav-item" key={category.id}>
                     <Link
-                        className="nav-link uk-text-meta uk-text-bold"
+                        className="nav-link uk-text-meta"
                         to={getCategory(category.id, category.slug)}
                     >
                         {category.name}
