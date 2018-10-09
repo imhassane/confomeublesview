@@ -18,21 +18,25 @@ const Contact = _ => {
                 Surtout n'hesitez pas à nous contacter !!
             </p>
 
-            <div className="uk-grid-small" uk-grid="true">
+            <div className="uk-grid-small uk-child-width-1-2" uk-grid="true">
 
-                <p className="uk-text-center">
-                    <a href="tel:+213551462006" className="uk-button uk-button-default">
-                        <span uk-icon="icon:receiver" className="mr-1 uk-text-baseline"></span>
-                        Par téléphone: (+213) 551 46 20 06
-                    </a>
-                </p>
+                <div>
+                    <p className="uk-text-center">
+                        <a href="tel:+213551462006" className="uk-button uk-button-default">
+                            <span uk-icon="icon:receiver" className="mr-1 uk-text-baseline"></span>
+                            Par téléphone: (+213) 551 46 20 06
+                        </a>
+                    </p>
+                </div>
 
-                <p className="uk-text-center">
-                    <a href="mailto:imthassane@gmail.com" className="uk-button uk-button-default">
-                        <span uk-icon="icon:mail" className="mr-1 uk-text-baseline"></span>
-                        Par email: imthassane@gmail.com
-                    </a>
-                </p>
+                <div>
+                    <p className="uk-text-center">
+                        <a href="mailto:imthassane@gmail.com" className="uk-button uk-button-default">
+                            <span uk-icon="icon:mail" className="mr-1 uk-text-baseline"></span>
+                            Par email: imthassane@gmail.com
+                        </a>
+                    </p>
+                </div>
 
             </div>
         

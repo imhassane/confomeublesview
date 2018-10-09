@@ -45,7 +45,9 @@ const CollectionList = props => {
                 <div uk-grid="true" className="uk-grid-match uk-child-width-1-3@s uk-child-width-1-4@m">
                     {collections_list}
                 </div>
-                { home && (
+                { collections_list.length===0 && <p className="uk-text-meta">Nous n'avons aucune collection à vous proposer actuellement</p>}
+            
+                { home && collections_list.length > 0 && (
                     <p className="uk-text-center">
                         <Link to={getCollections()} className="uk-button uk-button-secondary">
                             Voir toutes les collections

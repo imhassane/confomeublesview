@@ -18,6 +18,7 @@ export default class Product extends React.Component {
         const products = this.state.products
         return (
             <div className="uk-padding">
+                <p className="uk-text-bold">{this.props.title}</p>
                 <ProductList
                     products={products}
                     home={this.props.home}

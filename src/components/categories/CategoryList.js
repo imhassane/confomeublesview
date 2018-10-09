@@ -35,7 +35,8 @@ const CategoryList = ({ categories, search, home }) => {
             <div uk-grid="true" className="uk-grid-match uk-child-width-1-3@s uk-child-width-1-4@m">
                 {categories_list}
             </div>
-            { home && (
+            { categories_list.length===0 && <p className="uk-text-meta">Nous n'avons aucune catégorie à vous proposer actuellement</p>}
+            { home && categories_list.length > 0 && (
                 <p className="uk-text-center">
                     <Link to={getCategories()} className="uk-button uk-button-secondary">
                         Voir toutes les catégories

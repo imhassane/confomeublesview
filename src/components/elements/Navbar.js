@@ -16,7 +16,7 @@ export default class Navbar extends React.Component {
 
     render(){
         return (
-            <div className="mt-5 uk-background-muted uk-box-shadow-medium">
+            <div className="mt-4 uk-background-muted">
                 <div className="uk-grid-small uk-child-width-1-3@s" uk-grid="true">
                     <div className="uk-flex uk-flex-center">
                         <Link to="/" id="confo-title">

@@ -66,7 +66,7 @@ const ProductList = props => {
                 {products_list}
             </div>
             { products_list.length===0 && <p className="uk-text-meta">Nous n'avons aucun produit à vous proposer actuellement</p>}
-            { home && (
+            { home && products_list.length > 0 && (
                 <p className="uk-text-center">
                     <Link to={getProducts()} className="uk-button uk-button-secondary">
                         Voir tous nos produits

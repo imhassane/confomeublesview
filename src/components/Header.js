@@ -6,9 +6,9 @@ import CollectionNavbar from "../containers/collections/CollectionNavbar"
 
 const Header = props => {
     return (
-        <header className="">
+        <header className="uk-margin-remove uk-padding-remove">
 
-            <div className="container-fluid">
+            <div className="container-fluid" style={{width: "100%"}}>
                 <CategoryNavbar />
             </div>
 
