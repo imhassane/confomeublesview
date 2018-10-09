@@ -1,14 +1,12 @@
 import React from 'react'
 import axios from "axios"
-import { makeURL, randomInt } from "../../functions"
+import { makeURL } from "../../functions"
 import { Link } from "react-router-dom"
 import { getProduct } from "../../functions"
 
 const handleLike = id => {
     axios.get(makeURL(`favorites/add/${id}/`))
 }
-
-const cardBgs = [""]
 
 
 const ProductDescription = ({id, name, slug, comments, details, image, category, price, favorite}) => (

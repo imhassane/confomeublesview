@@ -55,7 +55,7 @@ export default class categoryDetail extends React.Component {
 
                     <p className="uk-text-bold">Catégorie: {category.name}</p>
 
-                    <ProductList products={category.products} search={""} home={true} />
+                    <ProductList products={category.products} search={this.props.search} home={true} />
                     
                 </div>
             </div>

@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { Sticky } from "react-uikit3"
 
 
 export default class Navbar extends React.Component {

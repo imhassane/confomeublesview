@@ -53,14 +53,13 @@ export default class ProductDetail extends React.Component {
                         </Link>
                     </li>
                 </ul>
-                <div className="row">
+                <div className="uk-grid uk-grid-match uk-child-width-1-2 uk-padding">
 
-                    <div className="col-7">
-                        <img src={product.image} alt={product.name} />
-
+                    <div className="uk-cover-container uk-padding-remove">
+                        <img src={product.image} alt={product.name} uk-cover="true" />
                     </div>
 
-                    <div className="col-5">
+                    <div className="pt-3 pb-3 border">
                         <h3 className="uk-text-bold">{product.name}</h3>
                         <p>
                             <small className="uk-text-meta">Produit ajouté le {product.created_at}</small>
@@ -89,7 +88,7 @@ export default class ProductDetail extends React.Component {
                 { similars && (
                     <ProductList
                         products={similars}
-                        limit={4} search={""}
+                        limit={8} search={this.props.search}
                         title={"Produits similaires"}
                         bread={false}
                     />

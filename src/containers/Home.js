@@ -1,6 +1,7 @@
 import React from "react"
 import axios from "axios"
 import { Slideshow, Cover, Spinner } from "react-uikit3"
+import Collection from "./collections/Collection"
 import Category from "./category/Category"
 import Product from "./product/Product"
 import { Link } from "react-router-dom"
@@ -60,8 +61,9 @@ export default class Home extends React.Component {
                     </Slideshow>
                 )}
             
-                <Category search={this.props.search} home={true} />
-                <Product search={this.props.search} home={true} limit={20} bread={false} />
+                <Collection search={this.props.search} home={true} title={"Nos collections"} limit={10} bread={false} />
+                <Category search={this.props.search} home={true} title={"Nos catégories"} bread={false} />
+                <Product search={this.props.search} home={true} limit={20} bread={false} title={"Nos produits"}/>
             </div>
         )
     }

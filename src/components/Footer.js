@@ -5,7 +5,7 @@ import Map from "./elements/Map"
 
 const Footer = props => {
     return (
-        <footer style={{backgroundColor: "silver"}} className="pt-4">
+        <footer style={{backgroundColor: "silver"}} className="pt-4 uk-margin-remove-bottom">
 
             <div className="uk-margin-auto">
                 <FooterAlert />
@@ -20,7 +20,7 @@ const Footer = props => {
                 </div>
             </div>
 
-            <p className="uk-text-center">
+            <p className="uk-panel uk-text-center uk-margin-remove-bottom">
                 Ce site a été créé par Hassane Sow
             </p>
 

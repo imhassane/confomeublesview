@@ -2,8 +2,7 @@ import React from "react"
 import { randomInt } from "../../functions"
 
 const CommentDescription = props => {
-    const { username, email, created_at, message, images } = props
-    console.log(images)
+    const { username, created_at, message, images } = props
     return (
         <article className="uk-comment uk-comment-primary">
             <header className="uk-comment-header uk-grid-medium uk-flex-middle" uk-grid="true">

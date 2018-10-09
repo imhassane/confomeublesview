@@ -21,7 +21,7 @@ export default class CategoryNavbar extends React.Component {
             return (
                 <li className="nav-item" key={category.id}>
                     <Link
-                        className="nav-link uk-text-meta"
+                        className="nav-link text-dark"
                         to={getCategory(category.id, category.slug)}
                     >
                         {category.name}
@@ -30,10 +30,10 @@ export default class CategoryNavbar extends React.Component {
             )
         })
         return (
-            <nav className="fixed-top mb-4 uk-background-muted">
+            <nav className="mb-4 uk-background-muted">
                 <ul className="nav" uk-slider="true">
                     <li className="nav-item">
-                        <Link to={getProducts()} className="nav-link uk-text-meta">
+                        <Link to={getProducts()} className="nav-link text-dark">
                             Tous nos produits
                         </Link>
                     </li>

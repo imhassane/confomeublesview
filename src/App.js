@@ -17,6 +17,8 @@ import Favorite from "./containers/favorites/Favoite"
 import { BrowserRouter as Router, Route } from "react-router-dom"
 
 import "./App.css"
+import Collection from './containers/collections/Collection';
+import CollectionDetail from './containers/collections/CollectionDetail';
 
 class App extends Component {
   constructor(props){
@@ -47,6 +49,19 @@ class App extends Component {
                 <Home search={this.state.search} />
               </div>
             )} />
+
+            <Route path="/collections" exact render={() => (
+              <div>
+                  <Helmet>
+                    <title>Nos collections</title>
+                  </Helmet>
+                  <Collection search={this.state.search} />
+              </div>
+            )} />
+
+            <Route path="/collection/:id/:slug/" exact render={({match}) => (
+              <CollectionDetail id={match.params.id} slug={match.params.slug} search={this.state.search} />
+            )} />
           
             <Route path="/products" exact render={() => (
               <div>
@@ -58,7 +73,7 @@ class App extends Component {
             )} />
 
             <Route path="/product/:id/:slug/" exact render={({match}) => (
-              <ProductDetail id={match.params.id} slug={match.params.slug} />
+              <ProductDetail search={this.state.search} id={match.params.id} slug={match.params.slug} />
             )} />
 
             <Route path="/categories/" exact render={() => (
@@ -71,7 +86,7 @@ class App extends Component {
             )} />
 
             <Route path="/category/:id/:slug" exact render={({match}) => (
-              <CategoryDetail id={match.params.id} slug={match.params.slug} />
+              <CategoryDetail search={this.state.search} id={match.params.id} slug={match.params.slug} />
             )} />
 
             <Route path="/favorites/" exact render={({match}) => (

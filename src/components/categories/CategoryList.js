@@ -19,6 +19,7 @@ const CategoryList = ({ categories, search, home }) => {
                         image={category.image}
                         slug={category.slug}
                         details={category.details}
+                        nb_products={category.nb_products}
                     />
                 </li>
             )

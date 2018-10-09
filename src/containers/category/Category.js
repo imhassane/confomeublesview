@@ -12,14 +12,15 @@ export default class Category extends React.Component {
             loading: true
         }
     }
-    componentWillMount(){
-        axios.get(makeURL("categories/"))
-        .then(categories => this.setState({ categories: categories.data.categories, loading: false}))
+    async componentWillMount(){
+        const datas = await axios.get(makeURL("categories/"))
+        const categories = datas.data.categories
+        this.setState({ categories, loading: false})
     }
     render(){
         return (
             <div className="uk-padding">
-                <p className="uk-text-bold">Nos Catégories</p>
+                <p className="uk-text-bold">{this.props.title}</p>
                 <CategoryList
                     categories={this.state.categories}
                     search={this.props.search}

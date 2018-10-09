@@ -9,8 +9,14 @@ export const getProduct = (id, slug) => `/product/${id}/${slug}/`
 export const getCategories = () => "/categories/"
 export const getCategory = (id, slug) => `/category/${id}/${slug}/`
 
+export const getCollections = () => '/collections'
+export const getCollection = (id, slug) => `/collection/${id}/${slug}/`
 // Server router
 export const serverSimilarProducts = id => `category/similar/products/${id}/`
+
+export const serverCollections = () => `collections/`
+export const serverCollection = (id, slug) => `collection/${id}/${slug}/`
+
 
 export const getCookie = name => {
     var cookieValue = null;
@@ -27,4 +33,6 @@ export const getCookie = name => {
     return cookieValue;
 }
 
+const buttons = ['btn-dark', 'btn-info', 'btn-primary', 'btn-danger', 'btn-warning', 'btn-success']
 export const randomInt = max => Math.floor(Math.random() * Math.floor(max))
+export const randomButton = () => 'btn ' + buttons[randomInt(buttons.length)]
