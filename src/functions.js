@@ -1,6 +1,6 @@
 import jQuery from "jquery"
 
-export const makeURL = url => `http://localhost:8000/${url}`
+export const makeURL = url => `https://confomeubles-api.herokuapp.com/${url}`
 
 // Router
 export const getProducts = () => "/products/"
