@@ -6,7 +6,7 @@ import "../../App.css"
 import { Spinner } from "react-uikit3";
 
 const ProductList = props => {
-    const { products, search, home } = props
+    const { products, search, home, title, limit, bread } = props
 
     if(!products){
         return (
@@ -16,7 +16,7 @@ const ProductList = props => {
         )
     }
 
-    const products_list = products.map((key, i) => {
+    let products_list = products.map((key, i) => {
         const product = products[i]
 
         if(product.name.toLowerCase().includes(search.toLowerCase())){
@@ -33,6 +33,7 @@ const ProductList = props => {
                         category={product.category}
                         price={product.price}
                         favorite={props.favorite}
+                        comments={0}
                     />
                 </div>
             )
@@ -40,10 +41,12 @@ const ProductList = props => {
                 
         
     })
+
+    products_list = products_list.slice(0, limit)
     
     return (
-        <div>
-            {!home && (
+        <div className="mt-5">
+            { bread && (
                 <ul className="uk-breadcrumb">
                     <li>
                         <Link to="/">
@@ -58,10 +61,18 @@ const ProductList = props => {
                 </ul>
             )}
             
-            <p className="uk-text-bold">Nos produits</p>
+            <p className="uk-text-bold">{title}</p>
             <div className="uk-grid-small uk-child-width-1-4@m uk-child-width-1-3@s uk-grid-match" uk-grid="true">
                 {products_list}
             </div>
+            { products_list.length===0 && <p className="uk-text-meta">Nous n'avons aucun produit à vous proposer actuellement</p>}
+            { home && (
+                <p className="uk-text-center">
+                    <Link to={getProducts()} className="uk-button uk-button-secondary">
+                        Voir tous nos produits
+                    </Link>
+                </p>
+            )}
         </div>
     )
 }

@@ -60,8 +60,8 @@ export default class Home extends React.Component {
                     </Slideshow>
                 )}
             
-                <Category search={this.props.search} />
-                <Product search={this.props.search} home={true} />
+                <Category search={this.props.search} home={true} />
+                <Product search={this.props.search} home={true} limit={20} bread={false} />
             </div>
         )
     }

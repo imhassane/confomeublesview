@@ -33,11 +33,11 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
+        <div className="mb-5">
 
           <Header changeSearch={this.changeSearch} />
 
-          <main>
+          <main className="uk-container uk-background-muted uk-padding-remove">
 
             <Route path="/" exact render={() => (
               <div>

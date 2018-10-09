@@ -9,6 +9,9 @@ export const getProduct = (id, slug) => `/product/${id}/${slug}/`
 export const getCategories = () => "/categories/"
 export const getCategory = (id, slug) => `/category/${id}/${slug}/`
 
+// Server router
+export const serverSimilarProducts = id => `category/similar/products/${id}/`
+
 export const getCookie = name => {
     var cookieValue = null;
     if (document.cookie && document.cookie !== '') {

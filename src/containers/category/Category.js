@@ -18,11 +18,12 @@ export default class Category extends React.Component {
     }
     render(){
         return (
-            <div className="">
+            <div className="uk-padding">
                 <p className="uk-text-bold">Nos Catégories</p>
                 <CategoryList
                     categories={this.state.categories}
                     search={this.props.search}
+                    home={this.props.home}
                 />
                 <hr />
             </div>

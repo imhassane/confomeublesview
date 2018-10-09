@@ -3,7 +3,8 @@ import Helmet from "react-helmet"
 import axios from "axios"
 import { Link } from "react-router-dom"
 import Comment from "../comment/Comment"
-import { makeURL, getProducts, getProduct } from "../../functions"
+import ProductList from "../../components/products/ProductList"
+import { makeURL, getProducts, getProduct, serverSimilarProducts } from "../../functions"
 
 
 export default class ProductDetail extends React.Component {
@@ -17,12 +18,21 @@ export default class ProductDetail extends React.Component {
 
     componentDidMount = () => {
         axios.get(makeURL(`product/${this.props.id}/${this.props.slug}/`))
-        .then(datas => this.setState({ product: datas.data.product }))
+        .then(datas => {
+            this.setState({ product: datas.data.product })
+            this.getSimilarProducts(this.state.product.id)
+        })
+        
+    }
+
+    getSimilarProducts = name => {
+        axios.get(makeURL(serverSimilarProducts(name)))
+        .then(datas => this.setState({ similars: datas.data.products}))
     }
     render(){
-        const { product } = this.state
+        const { product, similars } = this.state
         return (
-            <div>
+            <div className="uk-padding">
                 <Helmet>
                     <title>{product.name}</title>
                 </Helmet>
@@ -66,9 +76,25 @@ export default class ProductDetail extends React.Component {
                             </div>
                             
                         </div>
+                        <div className="mt-3">
+                            <span className="uk-text-bold">Description du produit</span>
+                            <p>
+                                {product.description}
+                            </p>
+                        </div>
                     </div>
                     
                 </div>
+
+                { similars && (
+                    <ProductList
+                        products={similars}
+                        limit={4} search={""}
+                        title={"Produits similaires"}
+                        bread={false}
+                    />
+                )}
+
                 <div>
                     { product.comments && (
                         <Comment product_id={product.id} comments={product.comments} />

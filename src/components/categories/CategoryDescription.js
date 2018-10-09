@@ -4,7 +4,7 @@ import { getCategory } from "../../functions"
 
 
 const CategoryDescription = ({id, name, slug, description, image, details}) => (
-    <Link to={getCategory(id, slug)}  className="uk-card uk-card-default uk-card-hover">
+    <Link to={getCategory(id, slug)}  className="mb-4 uk-card uk-card-default uk-card-hover">
         <div className="uk-card uk-card-default uk-card-hover">
             <div className="uk-card-media-top uk-cover-container">
                 <canvas width="50" height="220"></canvas>

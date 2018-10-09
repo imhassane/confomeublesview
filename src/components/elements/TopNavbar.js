@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 
 const TopNavbar = props => {
     return (
-        <div className="uk-background-muted">
+        <div className="uk-background-muted uk-padding-remove-bottom">
 
             <ul className="nav justify-content-center">
                 <li className="nav-item">
@@ -28,8 +28,6 @@ const TopNavbar = props => {
                     </Link>
                 </li>
             </ul>
-
-            <hr />
 
         </div>
     )

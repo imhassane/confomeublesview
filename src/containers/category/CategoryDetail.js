@@ -19,7 +19,7 @@ export default class categoryDetail extends React.Component {
         .then(datas => this.setState({ category: datas.data.category, loading: false }))
     }
 
-    componentDidMount = () => {
+    componentWillMount = () => {
         this.getDatas(this.props.id, this.props.slug)
     }
 
@@ -33,7 +33,7 @@ export default class categoryDetail extends React.Component {
         if(loading) return <p>Chargement</p>
 
         return (
-            <div>
+            <div className="uk-padding">
                 <ul className="uk-breadcrumb">
                     <li>
                         <Link to="/">

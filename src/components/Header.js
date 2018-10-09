@@ -6,13 +6,17 @@ import CategoryNavbar from "../containers/category/CategoryNavbar"
 
 const Header = props => {
     return (
-        <header>
+        <header className="mt-5">
 
-            <TopNavbar />
+            <div className="uk-container uk-background-muted uk-padding-remove">
+                
+                <Navbar changeSearch={props.changeSearch} />
 
-            <Navbar changeSearch={props.changeSearch} />
+                <TopNavbar />
 
-            <CategoryNavbar />
+                <CategoryNavbar />
+
+            </div>
 
         </header>
     )

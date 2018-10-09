@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from "axios"
-import { makeURL } from "../../functions"
+import { makeURL, randomInt } from "../../functions"
 import { Link } from "react-router-dom"
 import { getProduct } from "../../functions"
 
@@ -8,19 +8,21 @@ const handleLike = id => {
     axios.get(makeURL(`favorites/add/${id}/`))
 }
 
+const cardBgs = [""]
 
-const ProductDescription = ({id, name, slug, description, details, image, category, price, favorite}) => (
+
+const ProductDescription = ({id, name, slug, comments, details, image, category, price, favorite}) => (
     
-    <div className="uk-card uk-card-default uk-card-hover uk-margin">
+    <div className="card border mb-3">
 
-        <div className="uk-card-media-top uk-cover-container">
-            <canvas width="50" height="220"></canvas>
-            <img src={image} alt={name} uk-cover="true"/>
-        </div>
+        <img src={image} alt={name} className="card-img-top" />
 
-        <div className="uk-card-body uk-flex uk-flex-between">
-            <span className="uk-text-bold">{name}</span>
-            <Link to={getProduct(id, slug)} className="uk-text-bold">Voir</Link>
+        <div className="card-body">
+            <div className="uk-flex uk-flex-between">
+                <span className="">{name}</span>
+                <Link to={getProduct(id, slug)} className="">Voir</Link>
+            </div>
+            <p className="uk-text-small">{comments} avis sur le produit</p>
         </div>
 
         <div className="uk-card-footer uk-flex uk-flex-between">

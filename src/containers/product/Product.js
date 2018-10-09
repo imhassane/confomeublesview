@@ -17,8 +17,14 @@ export default class Product extends React.Component {
     render(){
         const products = this.state.products
         return (
-            <div>
-                <ProductList products={products} home={this.props.home} search={this.props.search} />
+            <div className="uk-padding">
+                <ProductList
+                    products={products}
+                    home={this.props.home}
+                    search={this.props.search}
+                    limit={this.props.limit}
+                    bread={this.props.bread}
+                />
             </div>
         )
     }

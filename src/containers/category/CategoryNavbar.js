@@ -1,7 +1,7 @@
 import React from "react"
 import axios from "axios"
 import { Link } from "react-router-dom"
-import { makeURL, getCategory } from "../../functions"
+import { makeURL, getCategory, getProducts } from "../../functions"
 
 
 export default class CategoryNavbar extends React.Component {
@@ -30,8 +30,13 @@ export default class CategoryNavbar extends React.Component {
             )
         })
         return (
-            <nav>
+            <nav className="fixed-top mb-4 uk-background-muted">
                 <ul className="nav" uk-slider="true">
+                    <li className="nav-item">
+                        <Link to={getProducts()} className="nav-link uk-text-meta">
+                            Tous nos produits
+                        </Link>
+                    </li>
                     {lists}
                 </ul>
                 <hr />

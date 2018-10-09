@@ -1,10 +1,11 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import CategoryDescription from "./CategoryDescription"
+import { getCategories } from "../../functions"
 
-const CategoryList = ({ categories, search }) => {
+const CategoryList = ({ categories, search, home }) => {
 
-    const categories_list = categories.map((k, i) => {
+    let categories_list = categories.map((k, i) => {
 
         const category = categories[i]
 
@@ -24,15 +25,22 @@ const CategoryList = ({ categories, search }) => {
         }
     })
 
+    if(home){
+        categories_list = categories_list.slice(0, 12)
+    }
+
     return (
-        <div uk-slider="true; autoplay: true; infinite: true; pause-on-hover: false; autoplay-interval: 2000">
-            <div className="uk-position-relative uk-visible-toggle uk-light">
-                <ul className="uk-grid uk-grid-match uk-slider-items uk-child-width-1-3@s uk-child-width-1-4@m">
-                    {categories_list}
-                </ul>
-                <Link className="uk-position-center-left uk-position-small uk-hidden-hover" to="#" uk-slidenav-previous="true" uk-slider-item="previous"></Link>
-                <Link className="uk-position-center-right uk-position-small uk-hidden-hover" to="#" uk-slidenav-next="true" uk-slider-item="next"></Link>
+        <div>
+            <div uk-grid="true" className="uk-grid-match uk-child-width-1-3@s uk-child-width-1-4@m">
+                {categories_list}
             </div>
+            { home && (
+                <p className="uk-text-center">
+                    <Link to={getCategories()} className="uk-button uk-button-secondary">
+                        Voir toutes les catégories
+                    </Link>
+                </p>
+            )}
         </div>
     )
 }

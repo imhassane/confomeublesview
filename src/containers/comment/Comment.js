@@ -13,7 +13,7 @@ export default class Comment extends React.Component {
     render(){
         const { product_id, comments } = this.props
         return (
-            <div className="uk-margin">
+            <div className="mt-5">
                 <CommentForm product_id={product_id} />
                 <CommentList comments={comments} />
             </div>
